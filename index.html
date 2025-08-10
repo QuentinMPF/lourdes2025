@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -31,15 +31,29 @@
         .checklist-item:not(.completed) .icon-checked {
             display: none;
         }
+        @keyframes pulse-icon {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .checklist-icon-container {
+            animation: pulse-icon 2s infinite;
+        }
+        .header-bg {
+            background-image: linear-gradient(to bottom, #1d4ed8, #3b82f6);
+        }
+        .title-font {
+            font-family: 'Caveat', cursive;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
     <!-- En-tête du site -->
-    <header class="bg-blue-600 shadow-md p-4 md:p-6 mb-8">
-        <div class="container-content mx-auto text-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-white">Mon pèlerinage à Lourdes</h1>
-            <p class="mt-2 text-blue-100 italic">Pour que ton expérience soit belle et en toute sécurité</p>
+    <header class="header-bg shadow-md p-4 md:p-6 mb-8">
+        <div class="container-content mx-auto text-center flex flex-col items-center">
+            <!-- La croix a été retirée pour un design plus épuré -->
+            <h1 class="title-font text-5xl md:text-6xl font-bold text-white leading-none">Mon pèlerinage à Lourdes</h1>
+            <p class="mt-2 text-blue-100 italic text-lg">Pour que ton expérience soit belle et en toute sécurité</p>
         </div>
     </header>
 
@@ -62,7 +76,7 @@
             <div id="checklist" class="space-y-4">
                 <!-- Checklist Item 1 -->
                 <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
-                    <button class="w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
+                    <div class="checklist-icon-container w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
                         <!-- Icone non cochée -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon-unchecked w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
@@ -71,34 +85,68 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon-checked w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="20 6 9 17 4 12"/>
                         </svg>
-                    </button>
-                    <span class="text-lg text-gray-800">Préparer mon sac à dos</span>
+                    </div>
+                    <span class="text-lg text-gray-800">Préparer mon sac à dos (livret du pèlerin, chapelet, casquette, vêtement de pluie, une gourde)</span>
                 </div>
                 <!-- Checklist Item 2 -->
                 <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
-                    <button class="w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
+                    <div class="checklist-icon-container w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon-unchecked w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
                         </svg>
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon-checked w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="20 6 9 17 4 12"/>
                         </svg>
-                    </button>
+                    </div>
                     <span class="text-lg text-gray-800">Me renseigner sur le programme du pèlerinage</span>
                 </div>
                 <!-- Checklist Item 3 -->
                 <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
-                    <button class="w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
+                    <div class="checklist-icon-container w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon-unchecked w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
                         </svg>
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon-checked w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="20 6 9 17 4 12"/>
                         </svg>
-                    </button>
+                    </div>
                     <span class="text-lg text-gray-800">Apprendre quelques chants du pèlerinage</span>
                 </div>
+                <!-- New Checklist Item -->
+                <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
+                    <div class="checklist-icon-container w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-unchecked w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-checked w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg text-gray-800">Ne pas oublier son badge attaché autour du cou</span>
+                </div>
             </div>
+        </section>
+
+        <!-- Section "Le conseil du jour" -->
+        <section class="bg-blue-100 border border-blue-300 rounded-lg p-6 mb-8 shadow-lg">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">Le conseil du jour</h2>
+            <p id="daily-tip" class="text-lg text-gray-700 italic mb-4">
+                Clique sur le bouton pour découvrir un conseil pour ton pèlerinage !
+            </p>
+            <button id="show-tip-button" class="px-6 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-200">
+                Découvrir mon conseil
+            </button>
+        </section>
+        
+        <!-- Nouvelle section pour les prières -->
+        <section class="bg-blue-100 border border-blue-300 rounded-lg p-6 mb-8 shadow-lg">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">Une prière pour aujourd'hui</h2>
+            <p id="daily-prayer" class="text-lg text-gray-700 italic mb-4">
+                Clique sur le bouton pour découvrir une prière inspirante !
+            </p>
+            <button id="show-prayer-button" class="px-6 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-200">
+                Découvrir ma prière
+            </button>
         </section>
 
         <!-- Section "Conseils de prudence" -->
@@ -119,18 +167,6 @@
                 </li>
             </ul>
         </section>
-
-        <!-- Section "Le conseil du jour" -->
-        <section class="bg-blue-100 border border-blue-300 rounded-lg p-6 mb-8 shadow-lg">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">Le conseil du jour</h2>
-            <p id="daily-tip" class="text-lg text-gray-700 italic mb-4">
-                Clique sur le bouton pour découvrir un conseil pour ton pèlerinage !
-            </p>
-            <button id="show-tip-button" class="px-6 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-200">
-                Découvrir mon conseil
-            </button>
-        </section>
-
 
         <!-- Section "Rencontrer un prêtre" -->
         <section class="bg-white rounded-lg p-6 mb-8 shadow-lg">
@@ -233,6 +269,28 @@
         showTipButton.addEventListener('click', () => {
             const randomIndex = Math.floor(Math.random() * tips.length);
             dailyTipElement.textContent = tips[randomIndex];
+        });
+
+        // Logique pour la prière du jour
+        const prayers = [
+            `Je vous salue, Marie pleine de grâce, le Seigneur est avec vous, vous êtes bénie entre toutes les femmes et Jésus, le fruit de vos entrailles, est béni. Sainte Marie, Mère de Dieu, priez pour nous pauvres pécheurs, maintenant et à l'heure de notre mort. Amen.`,
+            `Ô mon Dieu, je vous offre ma journée, mes pensées, mes paroles, mes actions, mes joies et mes peines. Je vous les offre en union avec le Cœur de Jésus, pour la gloire de votre nom et le salut des âmes.`,
+            `Ô mon Dieu, je crois fermement toutes les vérités que vous avez révélées, et que l’Église nous propose à croire, parce que vous les avez révélées, vous qui ne pouvez ni vous tromper ni nous tromper.`,
+            `Saint Michel Archange, défendez-nous dans le combat ; soyez notre protecteur contre la méchanceté et les embûches du démon. Que Dieu lui commande, nous vous en supplions. Et vous, Prince de la milice céleste, par la vertu divine, repoussez en enfer Satan et les autres esprits mauvais qui rôdent dans le monde pour la perte des âmes. Amen.`,
+            `Ange de Dieu, qui êtes mon gardien, et à qui la divine bonté m'a confié, éclairez-moi, dirigez-moi, gardez-moi et gouvernez-moi. Amen.`,
+            `Notre Père, qui es aux cieux, que ton nom soit sanctifié, que ton règne vienne, que ta volonté soit faite sur la terre comme au ciel. Donne-nous aujourd’hui notre pain de ce jour. Pardonne-nous nos offenses, comme nous pardonnons aussi à ceux qui nous ont offensés. Et ne nous laisse pas entrer en tentation, mais délivre-nous du Mal. Amen.`,
+            `Prière du matin: Seigneur, au début de cette journée, je viens vous remercier pour le repos de la nuit et la vie nouvelle qui commence. Je vous offre tout ce que je vais dire, faire et penser, en union avec le Cœur de Jésus. Accordez-moi la grâce d'être votre témoin aujourd'hui. Amen.`,
+            `Prière du soir: Seigneur, en cette fin de journée, je vous confie tous ceux que j'aime et tous ceux que vous mettez sur mon chemin. Merci pour les grâces que vous m'avez données. Pardonnez mes manquements. Protégez-moi et donnez-moi un sommeil paisible. Amen.`,
+            `L'Angélus: L'ange du Seigneur apporta l'annonce à Marie. Et elle conçut du Saint-Esprit. Je vous salue Marie... Voici la servante du Seigneur. Qu'il me soit fait selon votre parole. Je vous salue Marie... Et le Verbe s'est fait chair. Et il a habité parmi nous. Je vous salue Marie... Priez pour nous, sainte Mère de Dieu, afin que nous soyons rendus dignes des promesses du Christ. Prions : Que ta grâce, Seigneur, se répande dans nos cœurs ; par le message de l'ange, tu nous as fait connaître l'Incarnation de ton Fils bien-aimé, conduis-nous, par sa Passion et par sa Croix, jusqu'à la gloire de la Résurrection. Par le Christ, notre Seigneur. Amen.`,
+            `Le Credo (symbole des Apôtres): Je crois en Dieu, le Père tout-puissant, créateur du ciel et de la terre. Et en Jésus-Christ, son Fils unique, notre Seigneur, qui a été conçu du Saint-Esprit, est né de la Vierge Marie, a souffert sous Ponce Pilate, a été crucifié, est mort et a été enseveli, est descendu aux enfers, le troisième jour est ressuscité des morts, est monté aux cieux, est assis à la droite de Dieu le Père tout-puissant, d'où il viendra juger les vivants et les morts. Je crois en l’Esprit Saint, à la sainte Église catholique, à la communion des saints, à la rémission des péchés, à la résurrection de la chair, à la vie éternelle. Amen.`
+        ];
+
+        const showPrayerButton = document.getElementById('show-prayer-button');
+        const dailyPrayerElement = document.getElementById('daily-prayer');
+
+        showPrayerButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * prayers.length);
+            dailyPrayerElement.textContent = prayers[randomIndex];
         });
     </script>
 
