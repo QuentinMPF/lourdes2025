@@ -86,7 +86,7 @@
                             <polyline points="20 6 9 17 4 12"/>
                         </svg>
                     </div>
-                    <span class="text-lg text-gray-800">Préparer mon sac à dos (livret du pèlerin, chapelet, casquette, vêtement de pluie, une gourde)</span>
+                    <span class="text-lg text-gray-800">Préparer mon sac à dos (livrets du pèlerin, chapelet, casquette, vêtement de pluie, une gourde)</span>
                 </div>
                 <!-- Checklist Item 2 -->
                 <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
@@ -98,7 +98,7 @@
                             <polyline points="20 6 9 17 4 12"/>
                         </svg>
                     </div>
-                    <span class="text-lg text-gray-800">Me renseigner sur le programme du pèlerinage</span>
+                    <span class="text-lg text-gray-800">Me renseigner sur le programme du pèlerinage (heure et lieu de rendez-vous, affaires à prendre avec moi ...)</span>
                 </div>
                 <!-- Checklist Item 3 -->
                 <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
@@ -110,7 +110,7 @@
                             <polyline points="20 6 9 17 4 12"/>
                         </svg>
                     </div>
-                    <span class="text-lg text-gray-800">Apprendre quelques chants du pèlerinage</span>
+                    <span class="text-lg text-gray-800">Prévenir le responsable de l'équipe si j'ai un empêchement ou que je sais que je serais en retard</span>
                 </div>
                 <!-- New Checklist Item -->
                 <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
@@ -123,6 +123,11 @@
                         </svg>
                     </div>
                     <span class="text-lg text-gray-800">Ne pas oublier son badge attaché autour du cou</span>
+                </div>
+
+                <!-- Message de félicitations (initialement caché) -->
+                <div id="completion-message" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 font-bold rounded-lg text-center shadow-md">
+                    Bravo, tu es prêt pour vivre ce pèlerinage !
                 </div>
             </div>
         </section>
@@ -246,9 +251,32 @@
     <script>
         // Logique pour la checklist
         const checklistItems = document.querySelectorAll('.checklist-item');
+        const completionMessage = document.getElementById('completion-message');
+
+        /**
+         * Vérifie si toutes les cases de la checklist sont cochées et affiche/masque le message de complétion.
+         */
+        function checkCompletionStatus() {
+            // Vérifie si tous les éléments de la checklist ont la classe 'completed'
+            const allCompleted = Array.from(checklistItems).every(item => item.classList.contains('completed'));
+            
+            if (allCompleted) {
+                // Si tout est coché, affiche le message de complétion
+                completionMessage.classList.remove('hidden');
+            } else {
+                // Sinon, masque le message
+                completionMessage.classList.add('hidden');
+            }
+        }
+
+        // Ajoute un écouteur d'événement à chaque élément de la checklist
         checklistItems.forEach(item => {
             item.addEventListener('click', () => {
+                // Bascule la classe 'completed' lors du clic
                 item.classList.toggle('completed');
+                
+                // Appelle la fonction de vérification après chaque clic
+                checkCompletionStatus();
             });
         });
 
