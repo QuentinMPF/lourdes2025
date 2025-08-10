@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon pèlerinage à Lourdes</title>
+    <!-- Chargement de Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f2fe; /* Un fond bleu très clair */
+        }
+        .container-content {
+            max-width: 800px;
+        }
+        .footer-link {
+            text-decoration: none;
+            color: #d1d5db; /* Gris clair pour les liens du pied de page */
+            font-weight: 600;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        .checklist-item.completed .icon-unchecked {
+            display: none;
+        }
+        .checklist-item:not(.completed) .icon-checked {
+            display: none;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- En-tête du site -->
+    <header class="bg-blue-600 shadow-md p-4 md:p-6 mb-8">
+        <div class="container-content mx-auto text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-white">Mon pèlerinage à Lourdes</h1>
+            <p class="mt-2 text-blue-100 italic">Pour que ton expérience soit belle et en toute sécurité</p>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="flex-grow container-content mx-auto p-4 md:p-6">
+        
+        <!-- Section d'introduction -->
+        <section class="bg-white border border-blue-200 rounded-lg p-6 mb-8 shadow-lg">
+            <p class="text-lg text-gray-800">
+                Bienvenue à toi ! Tu t'apprêtes à vivre un moment incroyable. Ce site est là pour t'accompagner et te donner quelques conseils simples pour que ton pèlerinage à Lourdes soit une super expérience, en toute confiance.
+            </p>
+        </section>
+
+        <!-- Section interactive : Le pèlerinage en action ! -->
+        <section class="bg-white rounded-lg p-6 mb-8 shadow-lg">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">Le pèlerinage en action !</h2>
+            <p class="text-gray-700 mb-4">
+                Voici quelques points pour t'aider à te préparer. Clique sur chaque point pour le valider !
+            </p>
+            <div id="checklist" class="space-y-4">
+                <!-- Checklist Item 1 -->
+                <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
+                    <button class="w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
+                        <!-- Icone non cochée -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-unchecked w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        <!-- Icone cochée -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-checked w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </button>
+                    <span class="text-lg text-gray-800">Préparer mon sac à dos</span>
+                </div>
+                <!-- Checklist Item 2 -->
+                <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
+                    <button class="w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-unchecked w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-checked w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </button>
+                    <span class="text-lg text-gray-800">Me renseigner sur le programme du pèlerinage</span>
+                </div>
+                <!-- Checklist Item 3 -->
+                <div class="checklist-item flex items-center bg-gray-50 rounded-lg p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200">
+                    <button class="w-8 h-8 flex items-center justify-center rounded-full border-2 border-gray-400 mr-4 flex-shrink-0 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-unchecked w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-checked w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </button>
+                    <span class="text-lg text-gray-800">Apprendre quelques chants du pèlerinage</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section "Conseils de prudence" -->
+        <section class="bg-white rounded-lg p-6 mb-8 shadow-lg">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">Sois prudent(e) et prends soin de tes affaires</h2>
+            <ul class="list-disc list-inside space-y-3 text-gray-700">
+                <li>
+                    Lourdes est un lieu très fréquenté. C'est l'occasion de rencontrer plein de monde, mais sois toujours <strong>attentif(ve) à tes affaires personnelles</strong>.
+                </li>
+                <li>
+                    Garde tes objets de valeur (téléphone, portefeuille) dans une poche fermée ou un sac que tu surveilles en permanence.
+                </li>
+                <li>
+                    <strong>Ne laisse jamais tes sacs ou affaires sans surveillance</strong>, même pour un petit moment.
+                </li>
+                <li>
+                    Si tu te perds, ne panique pas ! Reste où tu es ou rends-toi au <strong>point de rendez-vous</strong> fixé par tes responsables. Ils viendront te chercher.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section "Le conseil du jour" -->
+        <section class="bg-blue-100 border border-blue-300 rounded-lg p-6 mb-8 shadow-lg">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">Le conseil du jour</h2>
+            <p id="daily-tip" class="text-lg text-gray-700 italic mb-4">
+                Clique sur le bouton pour découvrir un conseil pour ton pèlerinage !
+            </p>
+            <button id="show-tip-button" class="px-6 py-3 bg-blue-500 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-200">
+                Découvrir mon conseil
+            </button>
+        </section>
+
+
+        <!-- Section "Rencontrer un prêtre" -->
+        <section class="bg-white rounded-lg p-6 mb-8 shadow-lg">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">Si tu veux rencontrer un prêtre</h2>
+            <p class="text-gray-700 mb-4">
+                Si tu souhaites discuter avec un prêtre, n'hésite pas ! Les prêtres sont là pour t'écouter et échanger avec toi. Pour t'assurer d'avoir affaire à un prêtre en mission au pèlerinage, voici deux choses à vérifier :
+            </p>
+            <ul class="list-disc list-inside space-y-3 text-gray-700">
+                <li>
+                    <strong>Son badge</strong> : Tous les prêtres officiels du pèlerinage portent un badge visible et reconnaissable.
+                </li>
+                <li>
+                    <strong>Son célebré</strong> : C'est une carte qui atteste de son ministère. N'aie pas peur de lui demander de te le montrer. C'est une démarche normale et c'est un signe de confiance.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section "En cas de problème" (la plus sensible) -->
+        <section class="bg-red-100 border border-red-300 rounded-lg p-6 mb-8 shadow-lg">
+            <h2 class="text-2xl font-semibold text-red-700 mb-4 border-b-2 border-red-500 pb-2">En cas de harcèlement, violence, ou abus sexuel</h2>
+            <p class="text-red-800 font-medium mb-4">
+                Si tu te sens mal à l'aise, en danger, ou si tu es témoin d'une situation qui te choque, c'est important d'en parler.
+            </p>
+            <p class="text-red-800 font-bold mb-4">
+                Sache que ce qui se passe n'est jamais de ta faute. Tu n'es pas seul(e).
+            </p>
+            <p class="text-gray-700 font-medium mb-2">
+                <strong>Qui contacter ?</strong>
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>
+                    Parle-en tout de suite à un <strong>adulte en qui tu as confiance</strong> (ton responsable de groupe, un animateur, un parent).
+                </li>
+                <li>
+                    Si tu ne peux pas, cherche n'importe quel autre adulte responsable du pèlerinage.
+                </li>
+                <li>
+                    N'aie jamais peur de parler. C'est le plus important.
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-gray-800 text-gray-300 p-6 text-center mt-auto">
+        <div class="container-content mx-auto">
+            <!-- Numéros d'urgence cliquables -->
+            <p class="text-lg font-semibold mb-2">Numéros d'urgence :</p>
+            <ul class="flex flex-col space-y-1 md:flex-row md:justify-center md:space-x-8 md:space-y-0">
+                <li>
+                    <a href="tel:15" class="footer-link">SAMU : 15</a>
+                </li>
+                <li>
+                    <a href="tel:17" class="footer-link">Police / Gendarmerie : 17</a>
+                </li>
+                <li>
+                    <a href="tel:18" class="footer-link">Sapeurs-pompiers : 18</a>
+                </li>
+                <li>
+                    <a href="tel:116006" class="footer-link">Aide aux victimes : 116 006</a>
+                </li>
+            </ul>
+
+            <div class="mt-6 border-t border-gray-700 pt-4 text-sm">
+                <p>
+                    Ce site a été créé par la Maison de Protection des Familles des Yvelines, une unité de la
+                    <a href="https://www.gendarmerie.interieur.gouv.fr/" target="_blank" class="footer-link">Gendarmerie Nationale</a>.
+                </p>
+                <p class="mt-2">
+                    Ce site a été développé par Gemini, l'intelligence artificielle de Google.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Logique pour la checklist
+        const checklistItems = document.querySelectorAll('.checklist-item');
+        checklistItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('completed');
+            });
+        });
+
+        // Logique pour le conseil du jour
+        const tips = [
+            "Prends le temps d'écrire une prière. Tu pourras la déposer à la Grotte.",
+            "N'hésite pas à échanger avec d'autres jeunes de ton groupe. C'est l'occasion de te faire de nouveaux amis !",
+            "Si tu as un coup de mou, n'aie pas peur de le dire à ton responsable. Il est là pour t'aider.",
+            "Lourdes est un lieu d'aide aux autres. Regarde autour de toi comment tu peux aider ceux qui en ont besoin.",
+            "Fais attention à bien t'hydrater, surtout s'il fait chaud. C'est important pour la santé !",
+            "Prends un moment de silence. Assieds-toi dans l'une des chapelles ou près de la Grotte et respire, tout simplement.",
+            "Si tu vois un pèlerin qui semble perdu, tu peux l'aider à retrouver son chemin en appelant ton responsable."
+        ];
+
+        const showTipButton = document.getElementById('show-tip-button');
+        const dailyTipElement = document.getElementById('daily-tip');
+
+        showTipButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * tips.length);
+            dailyTipElement.textContent = tips[randomIndex];
+        });
+    </script>
+
+</body>
+</html>
